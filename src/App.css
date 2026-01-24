@@ -339,8 +339,7 @@
   min-height: 0;
 }
 .mainImg img{
- /* height: 35rem; 
- cursor: pointer; */
+ 
 max-width: 100%;    
   max-height: 100%;   
   width: auto;        
@@ -349,9 +348,7 @@ max-width: 100%;
   cursor: pointer;
 }
 .images{
-  /* display: flex;
-  gap: .5rem;
-  flex: 1.2; */
+ 
 
   display: flex;
   gap: .5rem;
@@ -361,13 +358,13 @@ max-width: 100%;
 }
 
 .images img{
-  /* height: 8rem;
-  cursor: pointer; */
+
 
   max-height: 100%;   
   width: auto;
   object-fit: cover;
   border-radius: 4px;
+  cursor: pointer;
 }
 
 .productTitle{
@@ -1066,6 +1063,128 @@ max-width: 100%;
   font-size: 1.4rem;
   border-top: 12px solid #ff6b6b !important;
 }
+
+
+@media (max-width: 450px) {
+  .navBar{
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+    text-align: center;
+  }
+  .navIcon{
+    font-size: 1.8rem;
+    width: 100%;
+  }
+  .menu {
+    width: 100%;
+  }
+  .menuList {
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .menuItem{
+    font-size: 1.4rem;
+  }
+
+  .homeContent {
+    width: 90%;
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .homeContent h1 {
+    font-size: 2.8rem;
+  }
+  .homeContent p {
+    font-size: 1.4rem; 
+  }
+
+  .shop {
+    padding: 1.5rem;
+  }
+
+  .shopTitle {
+    font-size: 2.2rem;
+  }
+
+  .card{
+    grid-template-columns: 1fr;
+  }
+
+  .modalContent {
+    height: 95vh; 
+    padding: 1rem;
+    overflow-y: auto;
+  }
+
+  .product {
+    flex-direction: column;
+    overflow-y: visible; 
+    gap: 1.5rem;
+  } 
+
+  .productDetails{
+    align-items: center;
+  }
+  .productImages, .productDetails {
+    max-height: none;
+  }
+
+  .mainImg img {
+    max-height: 250px; 
+  }
+
+  .productTitle {
+    font-size: 1.8rem;
+  }
+
+  .cartLayout {
+    flex-direction: column;
+    
+  }
+
+  .itemsSection, .checkoutSection {
+    width: 100%;
+    flex: none;
+  }
+
+  .cartItem h3 {
+    font-size: 1.2rem;
+  }
+
+  .invoiceGrid{
+    grid-template-columns: 1fr;
+  }
+
+  .infoBox {
+    border-right: none;
+    border-bottom: 1px solid #edf2f4;
+  }
+
+  .successCard {
+    padding: 2rem;
+  }
+
+  .actionButtons{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .contactCard {
+    min-width: 100%;
+  }
+
+  .footer {
+    font-size: 1.2rem;
+    padding: 1.5rem;
+  }
+
+
+}
+
 
 
 
