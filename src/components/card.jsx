@@ -6,7 +6,7 @@ export function Card({product, onQuickView}){
 
 
   return(<div className="card">
-    <img src={product.mainImage} alt="shoe" />
+    <img src={product.mainImage} alt={product.title} loading="lazy" />
     <h3>{product.title}</h3>
     <h3>৳{product.price}</h3>
   

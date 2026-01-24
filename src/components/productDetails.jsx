@@ -83,10 +83,10 @@ export function ProductDetails({product, onClose, onAddToCart}){
         <button className="closeBtn" onClick={onClose}>X</button>
         <div className="product">
           <div className="productImages">
-          <div className="mainImg"><img src={activeImage}/></div>
+          <div className="mainImg"><img src={activeImage} alt={product.title} loading="lazy"/></div>
           <div className="images">
             <img src={product.mainImage} onClick={()=>changeImage(product.mainImage)}/>
-            {product.images.map(image => (<img key={image} src={image} onClick={()=>changeImage(image)} />))}
+            {product.images.map(image => (<img key={image} src={image} loading="lazy" onClick={()=>changeImage(image)} />))}
           </div>
         </div>
         <div className="productDetails">
