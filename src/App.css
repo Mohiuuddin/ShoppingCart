@@ -1140,6 +1140,11 @@ max-width: 100%;
     font-size: 1.8rem;
   }
 
+  .emptyCartTitle{
+    font-size: 1.2rem;
+
+  }
+
   .cartLayout {
     flex-direction: column;
     
