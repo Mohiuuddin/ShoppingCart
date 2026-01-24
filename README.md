@@ -1,16 +1,177 @@
-# React + Vite
+🧸 Toddler’s Outfits – Shopping Cart Web App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern e-commerce web application for toddler shoes and outfits, built with React and React Router.
+Designed with simplicity, clean state management, and a smooth shopping experience in mind.
 
-Currently, two official plugins are available:
+✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🛍️ Browse products in the Shop
 
-## React Compiler
+👟 Select shoe sizes and quantities per product
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+➕ Add multiple sizes of the same product to cart
 
-## Expanding the ESLint configuration
+🗑️ Remove items from cart (no quantity update logic)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🧮 Auto cart count in Navbar
+
+🚚 Shipping cost selection (Inside / Outside Dhaka)
+
+💰 Live subtotal & total calculation
+
+📭 Empty Cart UI when cart is empty
+
+📞 Contact section visible on every page
+
+📱 Responsive & user-friendly UI
+
+🧠 State Management Approach
+
+This project does NOT use Context API or Redux.
+
+Instead, it uses:
+
+React Router <Outlet context />
+
+Single source of truth for cart state in Layout
+
+Why this approach?
+
+Simple
+
+Predictable
+
+Easy to debug
+
+Perfect for small–medium apps
+
+🏗️ Application Structure
+src/
+│
+├── components/
+│   ├── navbar.jsx
+│   ├── contact.jsx
+│   ├── footer.jsx
+│   └── emptyCart.jsx
+│
+├── pages/
+│   ├── home.jsx
+│   ├── shop.jsx
+│   └── cart.jsx
+│
+├── App.jsx
+└── main.jsx
+
+🔁 Data Flow (Very Important)
+Cart State Lives In:
+Layout.jsx
+
+Passed Down Using:
+<Outlet context={{ addToCart, cartItems, removeFromCart }} />
+
+Accessed In Pages Using:
+const { cartItems, addToCart, removeFromCart } = useOutletContext();
+
+
+✅ No prop drilling
+✅ No global context
+✅ Clean separation of concerns
+
+🛒 Cart Item Data Model
+
+Each cart item represents one product + one size.
+
+{
+  productId: number,
+  title: string,
+  sizeId: number,
+  sizeLabel: string,
+  quantity: number,
+  price: number,
+  image: string
+}
+
+
+Same shoe with different sizes = different cart items
+
+Example:
+
+Shoe A – 11cm × 2
+
+Shoe A – 13cm × 1
+
+🗑️ Removing Items From Cart
+
+Only remove, no quantity update.
+
+const removeFromCart = (productId, sizeId) => {
+  setCartItems(prev =>
+    prev.filter(
+      item =>
+        !(item.productId === productId && item.sizeId === sizeId)
+    )
+  );
+};
+
+🚦 Routing Setup
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      { index: true, element: <Home /> },
+      { path: "Home", element: <Home /> },
+      { path: "Shop", element: <Shop /> },
+      { path: "Cart", element: <Cart /> }
+    ]
+  }
+]);
+
+📞 Contact Section
+
+Displayed on every page, includes:
+
+Email
+
+Phone / WhatsApp
+
+Location
+
+Delivery info
+
+Social media links
+(No form – simple & clean)
+
+🎨 UI & Styling
+
+Navbar color: #16C0E4
+
+Footer & Contact section styled to match brand
+
+Icons powered by react-icons
+
+Clean layout with focus on readability
+
+🚀 Future Enhancements (Optional)
+
+💾 Persist cart using localStorage
+
+🔔 Toast notifications (add/remove)
+
+🤖 AI product recommendations
+
+📦 Order submission backend
+
+📊 Admin dashboard
+
+🧑‍💻 Tech Stack
+
+React
+
+React Router v6
+
+Vite
+
+CSS
+
+React Icons
