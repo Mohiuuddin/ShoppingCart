@@ -1,10 +1,17 @@
 import { useLocation, Link } from "react-router-dom";
 import { FaCheckCircle, FaMapPin, FaBox, FaPhoneAlt, FaPrint, FaShoppingBag, FaExclamationTriangle } from 'react-icons/fa';
+import { useEffect } from "react";
 
 export function OrderSuccess() {
   const location = useLocation();
   
   const data = location.state;
+
+  useEffect(() => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}, []);
+
+
 
   if (!data) {
     return (

@@ -1161,12 +1161,22 @@ max-width: 100%;
 
   .invoiceGrid{
     grid-template-columns: 1fr;
+    text-align: center;
   }
 
   .infoBox {
     border-right: none;
     border-bottom: 1px solid #edf2f4;
+    
   }
+
+  .infoBox h4{
+    display: flex;
+    justify-content: center;
+  }
+
+
+  
 
   .successCard {
     padding: 2rem;
