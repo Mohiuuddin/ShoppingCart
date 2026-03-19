@@ -1,4 +1,4 @@
-# 🧸 Toddler’s Outfits — Premium React E-Commerce Web App
+# 🧸 Toddler’s Outfits - Premium React E-Commerce Web App
 
 A specialized, high-performance e-commerce platform for toddler apparel and footwear. This project demonstrates a sophisticated approach to **Single Page Application (SPA)** development using **React 18** and **React Router v6**, prioritizing clean state management and a frictionless user journey.
 
@@ -107,9 +107,3 @@ As an ICT professional, I designed this platform with **scalability** and **regi
 -----
 
 *Developed with a focus on optimized state management and modern React patterns.*
-
-```
-
----
-
-```
